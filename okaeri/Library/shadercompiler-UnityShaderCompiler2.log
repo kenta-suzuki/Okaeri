@@ -1,0 +1,6 @@
+Base path: /Applications/Unity2018/Unity20181.app/Contents
+Cmd: initializeCompiler
+Cmd: translateComputeKernel
+  api=14 insize=1121 outsize=1389 ok=1
+Cmd: initializeCompiler
+Cmd: initializeCompiler
