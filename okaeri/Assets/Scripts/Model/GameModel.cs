@@ -1,16 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class GameModel : MonoBehaviour {
+public class GameModel
+{
+    static GameModel instance;
+    public static GameModel Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = new GameModel();
+                instance.Initialize();
+            }
+            return instance;
+        }
+    }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public Master Master { get; private set; }
+    public Model Model { get; private set; }
+
+    /// <summary>
+    /// 初期処理
+    /// </summary>
+    public void Initialize()
+    {
+        Master = new Master();
+        Model = new Model();
+    }
 }
