@@ -8,7 +8,7 @@ public class Model
     public int CurrentStageId { get; private set; }
 
     //セーブされているステージデータがあるかどうか
-    public bool HaveCurrentStageId
+    public bool HaCurrentStageId
     {
         get
         {
@@ -20,6 +20,25 @@ public class Model
     public List<int> ItemIds { get; set; }
     public List<int> EventIds { get; set; }
 
+    List<StageModel> stageModels;
+
+    /// <summary>
+    /// 初期処理
+    /// </summary>
+    public void Initialize()
+    {
+        //データのシリアライズを行う
+        GameModel.Instance.Master.StageMaster.Datas.ForEach(d => stageModels.Add(new StageModel(d.id)));
+    }
+
+    /// <summary>
+    /// ステージデータを取得する処理
+    /// </summary>
+    public StageModel GetStageModel(int stageId)
+    {
+        return stageModels.First(m => m.mstStage.id == stageId);
+    }
+
     /// <summary>
     /// ステージidのリストを追加
     /// </summary>
@@ -29,18 +48,27 @@ public class Model
         StageIds.Add(stageId);
     }
 
+    /// <summary>
+    /// アイテムを追加する処理
+    /// </summary>
     public void AddItemId(int itemId)
     {
         if (ItemIds.Contains(itemId)) return;
         ItemIds.Add(itemId);
     }
 
+    /// <summary>
+    /// アイテムを削除する処理
+    /// </summary>
     public void RemoveItemId(int itemId)
     {
         if (ItemIds.Contains(itemId)) return;
         ItemIds.Remove(itemId);
     }
 
+    /// <summary>
+    /// イベントを追加する処理
+    /// </summary>
     public void AddEventId(int eventId)
     {
         if (EventIds.Contains(eventId)) return;
@@ -52,16 +80,7 @@ public class Model
     /// </summary>
     public bool CanUpgradeItem(int upgradeItemId)
     {
-        var mstItem = GameModel.Instance.Master.MstItem.First(m => m.item_id == upgradeItemId);
-        var conditionIds = CreateItemIds(mstItem.UpgradeCondition);
-
-        int count = 0;
-        foreach (var id in GameModel.Instance.Model.ItemIds)
-        {
-            if (conditionIds.Any(c => c == id)) count++;
-        }
-
-        return count == conditionIds.Count;
+        return true;
     }
 
     /// <summary>
@@ -69,24 +88,7 @@ public class Model
     /// </summary>
     public void UpgradeItem(int upgradeItemId)
     {
-        var mstItem = GameModel.Instance.Master.MstItem.First(m => m.item_id == upgradeItemId);
-        var conditionIds = CreateItemIds(mstItem.UpgradeCondition);
-        AddItemId(upgradeItemId);
-        conditionIds.ForEach(id => RemoveItemId(id));
-    }
-
-    List<int> CreateItemIds(m_item_upgrade_condition mstUpgradeCondition)
-    {
-        List<int> list = new List<int>();
-        if (mstUpgradeCondition.requirement_item_id_1 != 0)
-            list.Add(mstUpgradeCondition.requirement_item_id_1);
-        if (mstUpgradeCondition.requirement_item_id_2 != 0)
-            list.Add(mstUpgradeCondition.requirement_item_id_2);
-        if (mstUpgradeCondition.requirement_item_id_3 != 0)
-            list.Add(mstUpgradeCondition.requirement_item_id_3);
-        if (mstUpgradeCondition.requirement_item_id_4 != 0)
-            list.Add(mstUpgradeCondition.requirement_item_id_4);
-        return list;
+        
     }
 
     public bool CanReciveEvent(int eventId)

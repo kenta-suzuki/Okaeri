@@ -1,0 +1,7 @@
+id,name,name_kana,description,bgm_id
+1,玄関,genkan,玄関だ・・・,1
+2,DK,dk,ダイニングキッチンだ,1
+3,風呂,both_room,お風呂だ・・・,1
+4,トイレ,rest_room,トイレだ,1
+5,居間,living,居間だ,1
+6,開かずの間,akazuno_ma,なんだこの部屋は・・・,2

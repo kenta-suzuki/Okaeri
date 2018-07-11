@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class m_item_upgrade_condition
+public class m_item_upgrade_condition : MasterBase
 {
-    public int upgrade_condition_id { get; private set; }
+    public int material_item_id { get; private set; }
+    public int upgrade_item_id { get; private set; }
+}
 
-    public int incentive_item_id { get; private set; }
-
-    public int requirement_item_id_1 { get; private set; }
-    public int requirement_item_id_2 { get; private set; }
-    public int requirement_item_id_3 { get; private set; }
-    public int requirement_item_id_4 { get; private set; }
+public class ItemUpgradeConditionMasterTable : MasterTableBase<m_item_upgrade_condition>
+{
+    static readonly string FilePath = "m_item_upgrade_condition";
+    public void Load() { Load(FilePath); }
 }

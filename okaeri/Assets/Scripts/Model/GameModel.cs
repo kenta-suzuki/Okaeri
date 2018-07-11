@@ -11,7 +11,6 @@ public class GameModel
             if (instance == null)
             {
                 instance = new GameModel();
-                instance.Initialize();
             }
             return instance;
         }
@@ -27,5 +26,6 @@ public class GameModel
     {
         Master = new Master();
         Model = new Model();
+        Master.Initialize();
     }
 }

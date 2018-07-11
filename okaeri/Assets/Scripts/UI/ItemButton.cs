@@ -1,16 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
+using TouchScript.Gestures;
 
-public class ItemButton : MonoBehaviour {
+public class ItemButton : MonoBehaviour 
+{
+    [SerializeField]
+    SpriteRenderer ItemSprite;
+    [SerializeField]
+    TapGesture tapGesture; //Tapに変更
 
-	// Use this for initialization
-	void Start () {
-		
+    public event Action Pressed = delegate { };
+
+	private void Start()
+	{
+        if(tapGesture == null)
+        {
+            Debug.LogError(gameObject.name + "にPressGestureがないぞ");
+        }
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	private void OnEnable()
+	{
+        tapGesture.Tapped += OnPress;
 	}
+
+	private void OnDisable()
+	{
+        tapGesture.Tapped -= OnPress;
+	}
+
+    void OnPress(object sender, EventArgs e)
+    {
+        if (Pressed == null) return;
+        Pressed();
+    }
 }

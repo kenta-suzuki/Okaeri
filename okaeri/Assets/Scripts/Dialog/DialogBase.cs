@@ -32,6 +32,7 @@ public class DialogBase : MonoBehaviour
     public void ShowDialog()
     {
         IsShowing = true;
+        Root.SetActive(true);
     }
 
     /// <summary>
@@ -47,6 +48,7 @@ public class DialogBase : MonoBehaviour
     /// </summary>
     public void HideDialog()
     {
+        Animator.SetTrigger("Hide");
     }
 
     /// <summary>
@@ -55,6 +57,7 @@ public class DialogBase : MonoBehaviour
     public void OnHide()
     {
         IsShowing = false;
+        Root.SetActive(false);
         Hided();
     }
 }

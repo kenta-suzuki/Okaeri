@@ -17,8 +17,8 @@ public class ItemRecieveDialog : DialogBase
     /// </summary>
     public void Initialize(m_item mstItem)
     {
-        var itemSprite = Resources.Load<Sprite>(mstItem.item_name_kana);
-        txtMessage.text = CreateMessage(mstItem.item_name, mstItem.item_name_kana);
+        var itemSprite = Resources.Load<Sprite>(mstItem.name_kana);
+        txtMessage.text = CreateMessage(mstItem.name, mstItem.name_kana);
     }
 
     /// <summary>
