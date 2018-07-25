@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventButton : MonoBehaviour {
+public class EventButton : MonoBehaviour
+{
 
 	// Use this for initialization
 	void Start () {

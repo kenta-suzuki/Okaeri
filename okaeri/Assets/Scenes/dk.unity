@@ -316,8 +316,7 @@ MonoBehaviour:
   sendStateChangeMessages: 0
   sendMessageTarget: {fileID: 0}
   requireGestureToFail: {fileID: 0}
-  friendlyGestures:
-  - {fileID: 1662768649}
+  friendlyGestures: []
   numberOfTapsRequired: 1
   timeLimit: Infinity
   distanceLimit: Infinity
@@ -521,8 +520,7 @@ MonoBehaviour:
   sendStateChangeMessages: 0
   sendMessageTarget: {fileID: 0}
   requireGestureToFail: {fileID: 0}
-  friendlyGestures:
-  - {fileID: 1662768649}
+  friendlyGestures: []
   numberOfTapsRequired: 1
   timeLimit: Infinity
   distanceLimit: Infinity
@@ -648,8 +646,7 @@ MonoBehaviour:
   sendStateChangeMessages: 0
   sendMessageTarget: {fileID: 0}
   requireGestureToFail: {fileID: 0}
-  friendlyGestures:
-  - {fileID: 1662768649}
+  friendlyGestures: []
   numberOfTapsRequired: 1
   timeLimit: Infinity
   distanceLimit: Infinity
@@ -775,8 +772,7 @@ MonoBehaviour:
   sendStateChangeMessages: 0
   sendMessageTarget: {fileID: 0}
   requireGestureToFail: {fileID: 0}
-  friendlyGestures:
-  - {fileID: 1662768649}
+  friendlyGestures: []
   numberOfTapsRequired: 1
   timeLimit: Infinity
   distanceLimit: Infinity
@@ -983,11 +979,7 @@ MonoBehaviour:
   sendStateChangeMessages: 0
   sendMessageTarget: {fileID: 0}
   requireGestureToFail: {fileID: 0}
-  friendlyGestures:
-  - {fileID: 759780325}
-  - {fileID: 957457756}
-  - {fileID: 535167739}
-  - {fileID: 1125996311}
+  friendlyGestures: []
   type: 5
   minScreenPointsDistance: 0.5
   screenTransformThreshold: 0.1
