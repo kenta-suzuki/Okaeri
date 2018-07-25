@@ -1,6 +1,4 @@
-﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-Shader "TouchScript/UnlitColor" {
+﻿Shader "TouchScript/UnlitColor" {
 Properties {
 	_Color ("Main Color", Color) = (1,1,1,1)
 }

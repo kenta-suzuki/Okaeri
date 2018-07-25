@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using TouchScript.Gestures;
+using TouchScript.Gestures.TransformGestures;
 
-public abstract class StageBase : MonoBehaviour 
+public abstract class StageBase : MonoBehaviour
 {
     [SerializeField]
     Camera GameCamera;
@@ -52,19 +52,19 @@ public abstract class StageBase : MonoBehaviour
 
     void OnTransfromStarted(object obj, EventArgs args)
     {
-        if (TransformGesture.NumTouches >= 2)
+        if (TransformGesture.NumPointers >= 2)
         {
-            baseDistance = Vector3.Distance(TransformGesture.ActiveTouches[0].Position, TransformGesture.ActiveTouches[1].Position);
+            baseDistance = Vector3.Distance(TransformGesture.ActivePointers[0].Position, TransformGesture.ActivePointers[1].Position);
         }
     }
 
     void OnTransfromed(object obj, EventArgs args)
     {
-        if (TransformGesture.NumTouches >= 2)
+        if (TransformGesture.NumPointers >= 2)
         {
             //拡大するときに画面外が写りそうな場合はずらす処理を追加
-            var firstTouch = TransformGesture.ActiveTouches[0];
-            var secondTouch = TransformGesture.ActiveTouches[1];
+            var firstTouch = TransformGesture.ActivePointers[0];
+            var secondTouch = TransformGesture.ActivePointers[1];
             var dis = Vector3.Distance(firstTouch.Position, secondTouch.Position);
             var size = currentCameraSize * (baseDistance / dis);
             if (size > 4) size = 4;
