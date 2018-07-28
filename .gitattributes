@@ -1,0 +1,7 @@
+okaeri/Assets/Wwise/Deployment/Plugins/iOS/Debug/libAkSoundEngine.a filter=lfs diff=lfs merge=lfs -text
+okaeri/Assets/Wwise/Deployment/Plugins/iOS/Release/libAkSoundEngine.a filter=lfs diff=lfs merge=lfs -text
+okaeri/Assets/Wwise/Deployment/Plugins/iOS/Profile/libAkSoundEngine.a filter=lfs diff=lfs merge=lfs -text
+okaeri/WwiseUnityIntegration_Android_Src.zip filter=lfs diff=lfs merge=lfs -text
+okaeri/WwiseUnityIntegration_Mac_Src.zip filter=lfs diff=lfs merge=lfs -text
+okaeri/WwiseUnityIntegration_Windows_Src.zip filter=lfs diff=lfs merge=lfs -text
+okaeri/WwiseUnityIntegration_iOS_Src.zip filter=lfs diff=lfs merge=lfs -text
